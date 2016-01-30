@@ -31,13 +31,11 @@ module RocketPaysRailsApi
       JSON.generate to_hash
     end
 
-    private
-
     def to_hash
       {
         description: @description,
         name: @name,
-        unit_price: @unit_price,
+        unitPrice: @unit_price,
         quantity: @quantity
       }
     end
