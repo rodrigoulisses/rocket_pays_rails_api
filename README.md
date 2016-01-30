@@ -1,5 +1,7 @@
 [![Build Status](https://semaphoreci.com/api/v1/projects/59020b7d-dece-444a-a08e-6662c77765e6/679693/badge.svg)](https://semaphoreci.com/rodrigoulisses/rocket_pays_rails_api)
 
+[![Code Climate](https://codeclimate.com/github/rodrigoulisses/rocket_pays_rails_api/badges/gpa.svg)](https://codeclimate.com/github/rodrigoulisses/rocket_pays_rails_api)
+
 # RocketPaysRailsApi
 
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/rocket_pays_rails_api`. To experiment with that code, run `bin/console` for an interactive prompt.
