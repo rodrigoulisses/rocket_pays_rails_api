@@ -5,6 +5,7 @@ require "rocket_pays_rails_api/version"
 
 require "base"
 
+require "rocket_pays_rails_api/invoice"
 require "rocket_pays_rails_api/product"
 
 module RocketPaysRailsApi
