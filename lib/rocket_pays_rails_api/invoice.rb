@@ -59,16 +59,18 @@ module RocketPaysRailsApi
 
     def to_hash
       {
-        number: @number,
-        invoiceDescription: @invoice_description,
-        customerName: @customer_name,
-        customerEmail: @customer_email,
-        invoiceDiscounts: @discounts,
-        invoiceCurrency: @currency,
-        invoiceDeliveryFee: @delivery_fee,
-        success_url: @success_url,
-        cancel_url: @cancel_url,
-        invoiceProducts: @products.map { |product| product.to_hash}
+        invoice: {
+          invoiceNumber: @number,
+          invoiceDescription: @invoice_description,
+          customerName: @customer_name,
+          customerEmail: @customer_email,
+          invoiceDiscounts: @discounts,
+          invoiceCurrency: @currency,
+          invoiceDeliveryFee: @delivery_fee,
+          invoiceProducts: @products.map { |product| product.to_hash}
+        },
+        successUrl: @success_url,
+        cancelUrl: @cancel_url
       }
     end
 

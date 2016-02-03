@@ -55,7 +55,7 @@ RSpec.describe RocketPaysRailsApi::Invoice, type: :model do
     end
 
     it 'return a json with datas' do
-      expect(subject.to_json).to eql %Q[{"number":"BD1234","invoiceDescription":"Description","customerName":"Antonio Francisco","customerEmail":"antonio@email.com","invoiceDiscounts":0.0,"invoiceCurrency":"R$","invoiceDeliveryFee":0.0,"success_url":"http://www.my-web-site.com/success_url","cancel_url":"http://www.my-web-site.com/cancel_url","invoiceProducts":[{"description":"Product 1","name":"Product 1","unitPrice":100.0,"quantity":2},{"description":"Product 2","name":"Product 2","unitPrice":100.98,"quantity":1}]}]
+      expect(subject.to_json).to eql %Q[{"invoice":{"invoiceNumber":"BD1234","invoiceDescription":"Description","customerName":"Antonio Francisco","customerEmail":"antonio@email.com","invoiceDiscounts":0.0,"invoiceCurrency":"R$","invoiceDeliveryFee":0.0,"invoiceProducts":[{"description":"Product 1","name":"Product 1","unitPrice":100.0,"quantity":2},{"description":"Product 2","name":"Product 2","unitPrice":100.98,"quantity":1}]},"successUrl":"http://www.my-web-site.com/success_url","cancelUrl":"http://www.my-web-site.com/cancel_url"}]
     end
   end
 end
