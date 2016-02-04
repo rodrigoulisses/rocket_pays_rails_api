@@ -1,5 +1,6 @@
 require 'json'
 require 'active_model'
+require 'net/http'
 require 'enumerize'
 
 require "rocket_pays_rails_api/version"
@@ -9,12 +10,13 @@ require "base"
 require "rocket_pays_rails_api/invoice"
 require "rocket_pays_rails_api/product"
 require "rocket_pays_rails_api/config"
+require "rocket_pays_rails_api/request"
 
 module RocketPaysRailsApi
   class << self
 
     extend Forwardable
-    def_delegators :configuration, :email, :token, :sandbox?, :production?
+    def_delegators :configuration, :email, :token, :sandbox?, :production?, :link
   end
 
   def self.configuration
