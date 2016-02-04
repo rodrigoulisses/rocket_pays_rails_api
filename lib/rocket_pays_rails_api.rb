@@ -1,5 +1,6 @@
 require 'json'
 require 'active_model'
+require 'enumerize'
 
 require "rocket_pays_rails_api/version"
 
