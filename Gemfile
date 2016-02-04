@@ -5,4 +5,5 @@ gemspec
 
 group :test do
   gem "shoulda-matchers"
+  gem 'codeclimate-test-reporter', require: false
 end
