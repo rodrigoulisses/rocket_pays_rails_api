@@ -18,7 +18,7 @@ describe RocketPaysRailsApi::Product, type: :model do
       subject.unit_price = 1000.00
       subject.quantity = 1
 
-      expect(subject.to_json).to eql "{\"description\":\"Macbook Air 11\",\"name\":\"Macbook Air 11\",\"unitPrice\":1000.0,\"quantity\":1}"
+      expect(subject.to_json).to eql "{\"description\":\"Macbook Air 11\",\"name\":\"Macbook Air 11\",\"unitPrice\":\"1000.0\",\"quantity\":\"1\"}"
     end
   end
 
@@ -29,7 +29,7 @@ describe RocketPaysRailsApi::Product, type: :model do
       subject.unit_price = 1000.00
       subject.quantity = 1
 
-      expect(subject.to_hash).to eql({description:"Macbook Air 11",name:"Macbook Air 11",unitPrice:1000.0,quantity:1})
+      expect(subject.to_hash).to eql({description:"Macbook Air 11",name:"Macbook Air 11",unitPrice:"1000.0",quantity:"1"})
     end
   end
 end

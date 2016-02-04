@@ -35,8 +35,8 @@ module RocketPaysRailsApi
       {
         description: @description,
         name: @name,
-        unitPrice: @unit_price,
-        quantity: @quantity
+        unitPrice: @unit_price.to_s,
+        quantity: @quantity.to_s
       }
     end
   end

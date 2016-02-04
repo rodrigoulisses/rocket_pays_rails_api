@@ -64,9 +64,9 @@ module RocketPaysRailsApi
           invoiceDescription: @invoice_description,
           customerName: @customer_name,
           customerEmail: @customer_email,
-          invoiceDiscounts: @discounts,
+          invoiceDiscounts: @discounts.to_s,
           invoiceCurrency: @currency,
-          invoiceDeliveryFee: @delivery_fee,
+          invoiceDeliveryFee: @delivery_fee.to_s,
           invoiceProducts: @products.map { |product| product.to_hash}
         },
         successUrl: @success_url,
