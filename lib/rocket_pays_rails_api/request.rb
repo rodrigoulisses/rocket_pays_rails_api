@@ -11,28 +11,39 @@ module RocketPaysRailsApi
       self.new(options).post
     end
 
+    def self.get!(options = {})
+      self.new(options).get
+    end
+
     def post
-      request = Net::HTTP::Post.new(url.path)
+      @url = URI.parse("#{RocketPaysRailsApi.link}/#{self.resource}")
+
+      request = Net::HTTP::Post.new(@url.path)
       request.basic_auth RocketPaysRailsApi.email, RocketPaysRailsApi.token
       request.body = self.params
       request.content_type = "application/json"
 
+      return JSON.parse(http_start(request).body)
+    end
+
+    def get
+      @url = URI.parse("#{RocketPaysRailsApi.link}/#{self.resource}/#{self.params}")
+      
+      request = Net::HTTP::Get.new(@url.path)
+      request.basic_auth RocketPaysRailsApi.email, RocketPaysRailsApi.token
+      request.content_type = "application/json"
 
       return JSON.parse(http_start(request).body)
     end
 
     private
 
-    def url
-      URI.parse("#{RocketPaysRailsApi.link}/#{self.resource}")
-    end
-
     def use_ssl?
       RocketPaysRailsApi.production?
     end
 
     def http_start(request)
-      Net::HTTP.start(url.host, url.port, use_ssl: use_ssl?) { |http| http.request(request) }
+      Net::HTTP.start(@url.host, @url.port, use_ssl: use_ssl?) { |http| http.request(request) }
     end
   end
 end
